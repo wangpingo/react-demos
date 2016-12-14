@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/babel">
+    //组件类以大写字母开头,驼峰命名法
+    var HellowMessage=React.createClass({
+        render:function () {
+            return <h1>hello React</h1>
+        }
+    });
+    ReactDOM.render(
+        <HellowMessage />,
+        document.getElementById('container')
+    );
+</script>
+</body>
+</html>
