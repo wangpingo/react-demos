@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+    <style>
+        .pStyle{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/babel">
+    //组件类以大写字母开头,驼峰命名法
+    //创建设置h1对象
+    //内联，
+    var hStyle={
+        backgroundColor:'green',
+        color:'red'
+    };
+    var ShowMessage=React.createClass({
+        render:function () {
+            return (
+                <div style={{backgroundColor:'red',borderWidth:5,borderColor:'black',borderStyle:'solid'}}>
+                    <h1 style={hStyle}>{this.props.firstRow}</h1>
+                    <p className="pStyle">{this.props.secondow}</p>
+                </div>
+            );
+        }
+    });
+ReactDOM.render(
+    <ShowMessage firstRow="你好" secondow="朋友！"/>,
+    document.getElementById('container')
+);
+</script>
+</body>
+</html>
