@@ -41,9 +41,10 @@
            return <a {...this.props}>{this.props.name}</a>
        }     
         });
+
     ReactDOM.render(
         <Link href="http://www.baidu.com" name="百度"/>,
-
+        document.getElementById('content')
     );
 </script>
 </body>
