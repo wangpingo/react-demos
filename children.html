@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+  var listComponet=React.createClass({
+      render:function () {
+          return (
+                  <ul>
+                      {
+                          React.Children.map(this.prop.children,function (child) {
+                              return <li>{child}</li>
+                          })
+                      }
+                  </ul>
+          );
+      }
+  });
+    ReactDOM.render(
+        (<listComponet>
+                <h1>百度一下</h1>
+                <a href="http://www.baidu.com">http://www.baidu.com</a>
+            </listComponet>),
+        document.getElementById('example')
+    )
+</script>
+</body>
+</html>
