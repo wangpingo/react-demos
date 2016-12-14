@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/babel">
+    //定义WebName
+    var WebName=React.createClass({
+        render:function () {
+            return <h1>{this.props.webname}</h1>;
+        }
+    })
+    //定义WebLink
+    var WebLink=React.createClass({
+        render:function () {
+            return <a href={this.props.weblink}>{this.props.weblink}</a>
+        }
+    });
+    //定义webshow
+    var WebShow=React.createClass({
+        render:function () {
+            return (
+               <div>
+                   <WebName webname={this.props.wname}/>
+                   <WebLink weblink={this.props.wlink}/>
+               </div>
+            )
+        }
+    });
+    ReactDOM.render(
+        <WebShow wname="百度" wlink="http://www.baidu.com"/>,
+        document.getElementById('container')
+    )
+</script>
+</body>
+</html>
