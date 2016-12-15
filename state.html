@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var MyButton=React.createClass({
+        handleClick:function () {
+          alert('点击');
+        },
+        render:function () {
+            return  (<button onClick={this.handleClick}>{this.props.buttonTitle}</button>)
+        }
+        }
+    );
+    ReactDOM.render(
+      <MyButton buttonTitle="按钮"/>,
+      document.getElementById('example')
+    );
+    var CheckButton=React.createClass({
+        getInitialState:function () {
+            return{
+                isCheck:false
+            }
+        },
+        handleChange:function () {
+            this.setState({
+                isCheck:!this.state.isCheck
+            });
+        },
+        render:function () {
+            var text=this.state.isCheck?'已选中':'未选中';
+            return(
+                    <div>
+                        <input type="checkbox" onChange={this.handleChange}/>
+                        {text}
+                    </div>
+            )
+        }
+    });
+    ReactDOM.render(
+        <CheckButton />,
+        document.getElementById('example')
+    );
+</script>
+</body>
+</html>
