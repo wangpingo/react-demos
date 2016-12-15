@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var Demo=React.createClass({
+        //创建类
+        getDefaultProps:function () {
+            //设置默认值
+            console.log('getDefaultProps');
+            return {};
+        },
+        //实例化阶段
+        getInitialState:function () {
+          console.log('getInitialState');
+          return null;
+        },
+        componentWillMount:function () {
+            console.log('componentWillMount');
+        },
+        render:function () {
+            console.log('render');
+            return <div>Hello React</div>
+        },
+        componentDidMount:function () {
+            console.log('componentDidMount');
+        },
+        //更新阶段
+        componentReceiveProps:function () {
+            console.log('componentReceiveProps');
+        },
+        shouldComponentUpdate:function () {
+            console.log('shouldComponentUpdate');
+            return true;
+        },
+        componentWillUpdate:function () {
+            console.log('componentWillUpdate');
+        },
+        componentDidUpdate:function () {
+            console.log('componentDidUpdate');
+        },
+        componentWillUnmount:function () {
+            console.log('componentWillUnmount')
+        }
+    });
+    //第一次创建并加载
+    ReactDOM.render(
+        <Demo/>,
+        document.getElementById('example')
+    )
+</script>
+</body>
+</html>
