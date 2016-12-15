@@ -7,7 +7,6 @@
 </head>
 <body>
 <div id="example"></div>
-
 <script type="text/babel">
     var MyTitle=React.createClass({
         getDefaultProps:function () {
@@ -16,6 +15,7 @@
                 title:'百度'
             };
         },
+
         render:function () {
             return <h1>{this.props.title}</h1>
         }
