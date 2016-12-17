@@ -52,12 +52,13 @@
     ReactDOM.render(
         <Demo/>,
         document.getElementById('example')
-    )
+    );
+
     ReactDOM.render(
             <Demo/>,
         document.getElementById('example')
-    )
-
+    );
+    ReactDOM.unmountComponentAtNode(document.getElementById('example'));
 </script>
 </body>
 </html>
